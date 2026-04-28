@@ -1,0 +1,45 @@
+conn.close()
+
+init_db()
+
+
+# ---------------------------
+# FORMULAIRE
+# ---------------------------
+@app.route("/", methods=["GET", "POST"])
+def form():
+
+    if request.method == "POST":
+        nom = request.form["nom"]
+        age = request.form["age"]
+        email = request.form["email"]
+        pays = request.form["pays"]
+
+        # sauvegarde en base
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        c.execute("""
+            INSERT INTO users (nom, age, email, pays)
+            VALUES (?, ?, ?, ?)
+        """, (nom, age, email, pays))
+
+        conn.commit()
+        conn.close()
+
+        return render_template("result.html",
+                               nom=nom,
+                               age=age,
+                               email=email,
+                               pays=pays)
+
+    return render_template("form.html")
+
+
+# ---------------------------
+# (OPTION ADMIN) voir les données
+# ---------------------------
+@app.route("/admin")
+def admin():
+    conn = sqlite3.connect("database.db")
+    c = c        

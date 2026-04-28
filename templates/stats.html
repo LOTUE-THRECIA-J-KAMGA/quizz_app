@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistiques</title>
+</head>
+<body>
+
+<h1>Statistiques des demandes 📊</h1>
+
+<h2>Âge moyen</h2>
+<p>{{ age_moyen | round(2) }} ans</p>
+
+<h2>Nombre d'étudiants par filière</h2>
+
+<ul>
+    {% for filiere, nombre in filieres %}
+        <li>{{ filiere }} : {{ nombre }}</li>
+    {% endfor %}
+</ul>
+
+<a href="/">Retour</a>
+
+</body>
+</html>

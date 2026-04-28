@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+</head>
+<body>
+
+<h1>Données des utilisateurs </h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Âge</th>
+        <th>Email</th>
+        <th>Filiere</th>
+        <th>Niveau</th>
+    </tr>
+
+    {% for user in data %}
+    <tr>
+        <td>{{ user[0] }}</td>
+        <td>{{ user[1] }}</td>
+        <td>{{ user[2] }}</td>
+        <td>{{ user[3] }}</td>
+        <td>{{ user[4] }}</td>
+        <td>{{ user[5] }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<a href="/logout">Se déconnecter</a>
+
+</body>
+</html>

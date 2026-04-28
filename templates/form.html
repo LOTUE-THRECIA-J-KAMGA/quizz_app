@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recensement Étudiants</title>
+    <style>
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+/* Conteneur */
+.container {
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Carte formulaire */
+.card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2c2c2c;
+    color: white;
+}
+
+/* Bouton */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00d4ff;
+    border: none;
+    border-radius: 6px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00aacc;
+}
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<h1>Formulaire de demande de chambre universitaire</h1>
+
+<p>
+Ce formulaire est destiné aux étudiants âgés de 18 à 26 ans souhaitant
+obtenir une chambre au sein du campus universitaire.
+Veuillez remplir correctement toutes les informations.
+</p>
+
+<form method="POST">
+
+    <label>Nom :</label><br>
+    <input type="text" name="nom" required><br><br>
+
+    <label>Âge :</label><br>
+    <input type="number" name="age" min="18" max="26" required><br><br>
+
+    <label>Email :</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Filière :</label><br>
+    <select name="filiere" required>
+        <option value="">-- Choisir --</option>
+        <option>Informatique</option>
+        <option>Mathématiques</option>
+        <option>Physique</option>
+        <option>Biologie</option>
+        <option>Économie</option>
+    </select><br><br>
+
+    <label>Niveau :</label><br>
+    <select name="niveau" required>
+        <option value="">-- Choisir --</option>
+        <option>L1</option>
+        <option>L2</option>
+        <option>L3</option>
+        <option>M1</option>
+        <option>M2</option>
+    </select><br><br>
+
+    <button type="submit">Envoyer</button>
+
+</form>
+
+<br><br>
+<a href="/login">
+    <button type="button">Accès Admin </button>
+</a>
+
+</body>
+</html>
